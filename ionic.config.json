@@ -1,0 +1,7 @@
+{
+  "name": "suchith-m",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

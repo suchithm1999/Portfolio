@@ -1,0 +1,126 @@
+.underline-effect {
+  position: relative;
+  display: inline-block;
+  font-size: 22px;
+  color: #333; /* Text color */
+  padding-bottom: 3px;
+  text-decoration: none; /* Remove default underline */
+}
+  
+/* Styles for the underline */
+.underline-effect::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-top: 10%;
+  width: 0; /* Initial width set to 0 */
+  height: 2px; /* Underline height */
+  background-color: orange; /* Underline color */
+  transform: translateX(-50%); /* Center the underline */
+  transition: width 0.3s ease; /* Transition effect on hover */
+}
+  
+/* Hover effect to reveal the underline */
+.underline-effect:hover::after {
+  width: 100%; /* Fully reveal the underline on hover */
+}
+  
+.background-text {
+  font-size: 350%;
+  color: white;
+  opacity: 0.1;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  text-align: center;
+  bottom: 50px;
+  width: 100%;
+  margin-top: 0.2%;
+  font-weight: bold;
+}
+  
+.skills-text {
+  text-align-last: center;
+  width: 100%;
+  margin-top: 15%;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  max-width: 70rem;
+  margin-top: -3rem;
+}
+
+.cards {
+  margin: 10px;
+  background: transparent !important;
+}
+
+.card-inner {
+  background: transparent !important;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  width: auto !important;
+}
+
+ion-icon {
+  font-size: 5rem;
+  background: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+  
+/* Media query for phones */
+@media only screen and (max-width: 600px) {
+  .underline-effect {
+    max-width: 100%;
+    font-size: 1em;
+  }
+
+  .skills-text {
+    margin-top: 15% !important;
+    font-size: 20px;
+  }
+
+  .background-text {
+    font-size: 30px;
+    margin-top: -7.5%;
+    bottom: 0;
+  }
+
+  .card-grid {
+    display: none;
+  }
+
+  .skill-cards-mobile {
+    margin: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 10%;
+  }
+
+  ion-icon {
+    font-size: 3rem;
+    margin: 5px;
+    background: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  .background-text {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (min-width: 600px) { 
+  .skill-cards-mobile {
+    display: none;
+  }
+}
+  

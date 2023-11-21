@@ -1,0 +1,148 @@
+.underline-effect {
+  position: relative;
+  display: inline-block;
+  font-size: 22px;
+  color: #333; /* Text color */
+	padding-bottom: 3px;
+  text-decoration: none; /* Remove default underline */
+}
+
+/* Styles for the underline */
+.underline-effect::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+	margin-top: 10%;
+  width: 0; /* Initial width set to 0 */
+  height: 2px; /* Underline height */
+  background-color: orange; /* Underline color */
+  transform: translateX(-50%); /* Center the underline */
+  transition: width 0.3s ease; /* Transition effect on hover */
+}
+
+/* Hover effect to reveal the underline */
+.underline-effect:hover::after {
+  width: 100%; /* Fully reveal the underline on hover */
+}
+
+.background-text {
+	font-size: 350%;
+	color: white;
+	opacity: 0.1;
+	display: flex;
+	justify-content: space-evenly;
+	position: relative;
+	text-align: center;
+	bottom: 50px;
+	width: 100%;
+	margin-top: 0.2%;
+	font-weight: bold;
+}
+
+.about-me-text {
+	text-align-last: center;
+	width: 100%;
+	margin-top: -10%;
+}
+
+.profile-section {
+	position: relative;
+    z-index: 5;
+    top: -10px;
+    margin-top: -2em;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.profile-image {
+	width: 25rem;
+    transform: scaleX(-1);
+}
+
+.profile-info {
+	padding-left: 2rem;
+    width: 35rem;
+}
+
+.Greetings {
+	font-size: 2rem;
+	color: white;
+}
+
+.job-role {
+	color: orange;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.summary {
+	color: white;
+	font-size: 16px;
+}
+
+.bio-data {
+	display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+label {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.download-button {
+	background: orange;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Media query for phones */
+@media only screen and (max-width: 600px) {
+  .underline-effect {
+    max-width: 100%;
+		font-size: 1em;
+  }
+
+	.about-me-text {
+		margin-top: -50% !important;
+		font-size: 0.8em;
+	}
+
+	.background-text {
+		font-size: 200%;
+		margin-top: -5.5%;
+		bottom: 0;
+	}
+
+	.profile-image {
+		width: 16rem;
+		margin: auto;
+		border-radius: 144px;
+	}
+
+	.profile-info {
+		padding-left: 0;
+		width: 23rem;
+		margin: 15px;
+	}
+
+	.profile-section {
+		flex-direction: column;
+		top: -20rem;
+	}
+
+	.about-me-text {
+		display: none !important;
+	}
+}
+
+/* Media query for tablets */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .profile-info {
+	width: 23rem;
+  }
+}

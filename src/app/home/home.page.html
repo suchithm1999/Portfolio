@@ -1,20 +1,135 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<div class="full-screen-view bg-black">
+  <nav class="sticky inset-0 z-10 block h-max w-full max-w-full rounded-none border border-white/80 bg-white bg-opacity-80 py-2 px-4 text-white shadow-md backdrop-blur-2xl backdrop-saturate-200 lg:px-8 lg:py-4">
+    <div class="flex items-center text-gray-900 navlist">
+      <a
+        class="name mr-4 block cursor-pointer py-1.5 font-sans text-base font-medium leading-relaxed text-inherit antialiased"
+        (click)="scrollToHome()"
+      >
+        <ion-icon src="assets/images/name-logo.svg"></ion-icon>
+      </a>
+      <ul class="mr-8 hidden items-center gap-6 lg:flex navbarList" style="margin: 0; margin-left: 150px;">
+        <li class="btn block p-1 font-sans font-normal leading-normal text-inherit antialiased">
+          <a class="flex items-center" (click)="scrollToHome()">
+            Home
+          </a>
+        </li>
+        <li class="btn block p-1 font-sans font-normal leading-normal text-inherit antialiased">
+          <a class="flex items-center" (click)="scrollToAboutMe()">
+            About
+          </a>
+        </li>
+        <li class="btn block p-1 font-sans font-normal leading-normal text-inherit antialiased">
+          <a class="flex items-center" (click)="scrollToWorkExperience()">
+            Work Experience
+          </a>
+        </li>
+        <li class="btn block p-1 font-sans font-normal leading-normal text-inherit antialiased">
+          <a class="flex items-center" (click)="scrollToSkills()">
+            Skills
+          </a>
+        </li>
+        <li class="btn block p-1 font-sans font-normal leading-normal text-inherit antialiased">
+          <a class="flex items-center" href="assets/Suchith_M_Resume.pdf" download (click)="isHidden = true">
+            Resume
+          </a>
+        </li>
+        <li class="block p-1 font-sans font-normal leading-normal text-inherit antialiased">
+          <a class="flex items-center">
+            <span style="padding-right: 10px;">Contact</span>|
+            <ion-icon class="phone-icon" name="call"></ion-icon>
+            <span style="color: orange;"> +91-9164389511</span>
+            <ion-icon name="mail" class="email-icon phone-icon"></ion-icon>
+            <span style="color: orange;" class="email"> suchithm1999@gmail.com</span>
+          </a>
+        </li>
+      </ul>
+      <button
+        class="middle none relative ml-auto h-6 max-h-[40px] w-6 max-w-[40px] rounded-lg text-center font-sans text-xs font-medium uppercase text-blue-gray-500 transition-all hover:bg-transparent focus:bg-transparent active:bg-transparent disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:hidden"
+        (click)="toggleCollapsible('sticky-navar')"
+      >
+        <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div
+      class="block w-full basis-full overflow-hidden text-blue-gray-900 transition-all duration-300 ease-in"
+      data-collapse="sticky-navar" [ngClass]="{'hidden': isHidden, 'lg:flex': !isHidden}"
+    >
+      <ul class="mt-2 mb-4 flex flex-col gap-2 pb-2" (clickOutside)="toggleCollapsible('sticky-navar')">
+        <li class="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+          <a class="flex items-center" (click)="scrollToHome()">
+            Home
+          </a>
+        </li>
+        <li class="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+          <a class="flex items-center" (click)="scrollToAboutMeInMobile()">
+            About
+          </a>
+        </li>
+        <li class="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+          <a class="flex items-center" (click)="scrollToWorkExperience()">
+            Work Experience
+          </a>
+        </li>
+        <li class="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+          <a class="flex items-center" (click)="scrollToSkills()">
+            Skills
+          </a>
+        </li>
+        <li class="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+          <a class="flex items-center" href="assets/Suchith_M_Resume.pdf" download (click)="isHidden = true">
+            Download Resume
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="mx-auto" id="Home">
+    <div class="relative mb-12 flex flex-col overflow-hidden bg-white bg-clip-border text-gray-700 shadow-md background-img">
+      <img
+        alt="nature"
+        class="h-[40rem] w-full object-fill object-center"
+        src="https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2717&amp;q=80"
+      />
+      <div class="container">
+        <label class="name">
+            Hi, I am <span style="color: orange; padding-left: 15px;">Suchith M</span>
+        </label>
+        <label class="description">
+            I am a Software Developer, 
+            I specialize in creating sleek Angular applications and native solutions with the Ionic framework, offering a harmonious blend of clean, efficient code and visually appealing design.
+        </label>
+        <div class="social-icons">
+            <button>
+              <a href="https://www.linkedin.com/in/suchith-m"><ion-icon name="logo-linkedin"></ion-icon></a>
+            </button>
+            <button>
+              <a href="https://github.com/suchithm1999"><ion-icon name="logo-github"></ion-icon></a>
+            </button>
+            <button>
+              <a href="https://www.instagram.com/suchithshetty_"><ion-icon name="logo-instagram"></ion-icon></a>              
+            </button>
+        </div>
+      </div>
+    </div>
   </div>
-</ion-content>
+
+  <div>
+    <app-about-me></app-about-me>
+    <app-work-experience></app-work-experience>
+    <app-skills-page></app-skills-page>
+  </div>
+</div>

@@ -63,4 +63,12 @@ export class HomePage {
       this.isHidden = true;
     }
   }
+
+  scrollToWorkExperienceInMobile(): void {
+    const targetDiv = document.getElementById('WorkExperienceInMobile');
+    if (targetDiv) {
+      targetDiv.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+      this.isHidden = true;
+    }
+  }
 }
